@@ -36,10 +36,9 @@ function Home() {
     {
         return Math.floor(Math.random() * 100) + 1;
     }
-
+    const url = process.env.NODE_ENV === 'production' ? "/" : "http://localhost:8000/";
     const handlesubmit = async(e) => {
         e.preventDefault();
-        const url = "http://localhost:8000/";
         const data = await fetch(url,{
             method:'post',
             headers:{"Content-Type":"application/json"},
