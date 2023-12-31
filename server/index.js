@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
-const port = 8000;
+
 
 
 const client = new Client({
@@ -68,7 +68,7 @@ app.post('/',(req,res)=>{
 })
 
 
-
+const port = process.env.PORT || 8001;
 app.listen(port,()=>{
     console.log("server started running successfully");
 });
